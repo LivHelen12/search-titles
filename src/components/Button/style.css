@@ -1,0 +1,18 @@
+.button {
+    width: 100%;
+    background: darkblue;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    transition: opacity .5s ease-in;
+}
+
+.button:hover {
+    opacity: 0.8;
+}
+
+.button:disabled {
+    background: #888;
+    cursor: not-allowed;
+}
