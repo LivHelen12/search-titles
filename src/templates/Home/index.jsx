@@ -5,14 +5,14 @@ import { Component } from "react";
 import { loadPost } from "../../Uteis/load-posts";
 import { Posts } from "../../components/Posts";
 import { Button } from "../../components/Button";
-import { TextInput } from "../../components/TextInput";
+import { TextInput } from "../../components/TextInput"; 
 
 export class Home extends Component {
   state = {
     posts: [],
     allPosts: [],
     page: 0,
-    postsPerPage: 2,
+    postsPerPage: 12,
     searchValue: "",
   };
 
@@ -69,7 +69,7 @@ export class Home extends Component {
 
         {filteredPosts.length === 0 && (
           <p>Não existem posts com o título buscado.</p>
-        )}
+        )}  
 
         <div className="button-container">
           {!searchValue && (
