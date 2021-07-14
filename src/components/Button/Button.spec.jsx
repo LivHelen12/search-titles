@@ -12,6 +12,14 @@ describe("<Button />", () => {
     expect(button).toBeInTheDocument();
   });
 
+  it("should be enabled when disabled is false", () => {
+    render(<Button text="Load More" disabled={true} />);
+
+    const button = screen.getByRole("button", { name: /load more/i });
+
+    expect(button).toBeDisabled();
+  });
+
   it("should call the function on button click", () => {
     const fn = jest.fn();
     render(<Button text="Load More" onClick={fn} />);
@@ -21,14 +29,6 @@ describe("<Button />", () => {
     userEvent.click(button);
 
     expect(fn).toHaveBeenCalledTimes(1);
-  });
-
-  it("should be enabled when disabled is false", () => {
-    render(<Button text="Load More" disabled={true} />);
-
-    const button = screen.getByRole("button", { name: /load more/i });
-
-    expect(button).toBeDisabled();
   });
 
   it("should match snapshot", () => {
