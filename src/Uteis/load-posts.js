@@ -14,4 +14,4 @@ export const loadPost = async () => {
     });
 
     return postsAndPhotos;
-}
+};
